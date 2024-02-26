@@ -103,15 +103,17 @@ if __name__ == "__main__":
 
     choice = input("Enter your choice: ").strip()
 
+    # Add initial action at the start
+    drive_path = input("Enter the path to the drive to perform initial action (e.g., C:/, D:/): ").strip()
+    if choice == "2" or choice == "3":  # Check if recycling is chosen
+        recycle_files(drive_path)  # For example, performing initial recycling
+
     if choice == "1":
-        drive_path = input("Enter the path to the drive to organize files (e.g., C:/, D:/): ").strip()
         organize_files(drive_path)
     elif choice == "2":
-        drive_path = input("Enter the path to the drive to recycle files (e.g., C:/, D:/): ").strip()
         interval_minutes = int(input("Enter the interval in minutes: ").strip())
         schedule_recycle_drive(drive_path, interval_minutes)
     elif choice == "3":
-        drive_path = input("Enter the path to the drive to organize and recycle files (e.g., C:/, D:/): ").strip()
         organize_files(drive_path)
         interval_minutes = int(input("Enter the interval in minutes for recycling: ").strip())
         schedule_recycle_drive(drive_path, interval_minutes)
