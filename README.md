@@ -14,3 +14,6 @@ This Python script provides functionality to organize files into folders based o
 
    ```bash
    git clone https://github.com/tasdikbyousuf/task-automation.git
+
+## Required Libraries
+os, shututil, send2trash, schedule, time, datetime
